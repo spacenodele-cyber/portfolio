@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jules Simeray — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVIGATION ===== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">Jules Simeray</a>
+
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="#experiences" class="nav__link">Expériences</a></li>
+        <li><a href="#histoire" class="nav__link">Mon histoire</a></li>
+        <li><a href="#competences" class="nav__link">Compétences</a></li>
+        <li><a href="#outils" class="nav__link">Outils & logiciels</a></li>
+        <li><a href="#passions" class="nav__link">Passions</a></li>
+        <li><a href="cv.html" class="nav__link nav__link--cv">Mon CV</a></li>
+      </ul>
+
+      <!-- Burger menu -->
+      <button class="nav__burger" id="nav-burger" aria-label="Menu" aria-expanded="false">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container hero__inner">
+
+        <div class="hero__text">
+          <p class="hero__eyebrow">Étudiant en Bachelor Stratégie des Marques · Sup de Pub Lyon</p>
+          <h1 class="hero__title">Jules<br /><span class="accent">Simeray</span></h1>
+          <p class="hero__sub">Alternant en communication, marketing et digital. Créatif, autonome et empathique, je mets ma passion pour la communication au service de projets qui ont du sens.</p>
+          <div class="hero__ctas">
+            <a href="#experiences" class="btn btn--primary">Découvrir mon profil</a>
+            <a href="cv.html" class="btn btn--outline">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Télécharger mon CV
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__card-col">
+          <div class="bcard-scene">
+            <div class="bcard">
+
+              <div class="bcard__face bcard__face--front">
+                <div class="bcard__front-top">
+                  <span class="bcard__monogram">JS</span>
+                  <span class="bcard__tag">Communication</span>
+                </div>
+                <div class="bcard__front-bottom">
+                  <p class="bcard__name">Jules Simeray</p>
+                  <p class="bcard__role">Bachelor Stratégie des Marques</p>
+                </div>
+              </div>
+
+              <div class="bcard__face bcard__face--back">
+                <span class="bcard__back-mark">JS</span>
+              </div>
+
+            </div>
+            <div class="bcard__shadow"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SECTION 1 : EXPÉRIENCES ===== -->
+    <section class="section" id="experiences">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__label">01</span>
+          <h2 class="section__title">Expériences</h2>
+        </div>
+
+        <div class="timeline">
+
+          <a href="experience-confettis.html" class="timeline__item fade-in">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__date">2023 — 2025</span>
+              <div class="timeline__main">
+                <h3 class="timeline__role">Animateur événementiel</h3>
+                <p class="timeline__company">Club Confettis</p>
+              </div>
+              <span class="timeline__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a href="experience-groupama.html" class="timeline__item fade-in">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__date">05/2024 — 07/2024</span>
+              <div class="timeline__main">
+                <h3 class="timeline__role">Communication interne</h3>
+                <p class="timeline__company">Groupama</p>
+              </div>
+              <span class="timeline__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a href="experience-solart.html" class="timeline__item fade-in">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__date">05/2023 — 06/2023</span>
+              <div class="timeline__main">
+                <h3 class="timeline__role">Communication externe & réseaux sociaux</h3>
+                <p class="timeline__company">Sol'Art</p>
+              </div>
+              <span class="timeline__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a href="experience-gamespirit.html" class="timeline__item fade-in">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__date">06/2022 — 07/2022</span>
+              <div class="timeline__main">
+                <h3 class="timeline__role">Stagiaire sur surface de vente</h3>
+                <p class="timeline__company">Gamespirit</p>
+              </div>
+              <span class="timeline__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a href="experience-wrs.html" class="timeline__item fade-in">
+            <div class="timeline__dot"></div>
+            <div class="timeline__content">
+              <span class="timeline__date">2018</span>
+              <div class="timeline__main">
+                <h3 class="timeline__role">Stagiaire communication</h3>
+                <p class="timeline__company">Agence WR&amp;S</p>
+              </div>
+              <span class="timeline__arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2 : MON HISTOIRE ===== -->
+    <section class="section section--alt" id="histoire">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__label">02</span>
+          <h2 class="section__title">Mon histoire</h2>
+        </div>
+
+        <div class="histoire__grid">
+          <div class="histoire__text fade-in">
+            <p class="histoire__lead">Passionné de communication et de création, je suis actuellement en Bachelor Stratégie des Marques à Sup de Pub Lyon, en alternance dans le domaine du marketing et du digital.</p>
+            <p>Mon parcours a débuté avec un Bac STMG mention Assez Bien au Lycée La Favorite, avant d'intégrer l'ESDES (UCLY) pour préparer un BTS aux programmes grandes écoles. Cette double culture académique m'a permis de développer une approche à la fois rigoureuse et créative de la communication.</p>
+            <p>Mes expériences variées — de la communication interne chez Groupama à la gestion des réseaux sociaux pour Sol'Art, en passant par l'animation événementielle — m'ont appris à m'adapter rapidement et à travailler en autonomie sur des projets concrets.</p>
+            <p>Anglais bilingue, à l'aise avec les outils créatifs et digitaux, je cherche à mettre mes compétences au service d'une entreprise ambitieuse dans le cadre de mon alternance (rythme : 1 semaine école / 3 semaines entreprise).</p>
+          </div>
+
+          <div class="histoire__photo-col fade-in">
+            <div class="histoire__photo-wrap">
+              <div class="histoire__photo-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+                <span>Photo de profil</span>
+              </div>
+              <div class="histoire__photo-deco" aria-hidden="true"></div>
+            </div>
+            <div class="histoire__stats">
+              <div class="stat">
+                <span class="stat__number">5</span>
+                <span class="stat__label">Expériences & missions</span>
+              </div>
+              <div class="stat">
+                <span class="stat__number">3</span>
+                <span class="stat__label">Formations</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 3 : COMPÉTENCES ===== -->
+    <section class="section" id="competences">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__label">03</span>
+          <h2 class="section__title">Compétences</h2>
+        </div>
+
+        <div class="competences__grid">
+
+          <!-- Soft skills -->
+          <div class="competences__col fade-in">
+            <h3 class="competences__col-title">Qualités</h3>
+            <div class="skill-list">
+
+              <div class="skill">
+                <div class="skill__header">
+                  <span class="skill__name">Créativité</span>
+                  <span class="skill__pct">90%</span>
+                </div>
+                <p class="skill__desc">Conception de supports visuels originaux et de contenus engageants adaptés à chaque audience.</p>
+                <div class="skill__bar"><div class="skill__fill" data-width="90"></div></div>
+              </div>
+
+              <div class="skill">
+                <div class="skill__header">
+                  <span class="skill__name">Autonomie</span>
+                  <span class="skill__pct">88%</span>
+                </div>
+                <p class="skill__desc">Capacité à mener des projets de bout en bout, de la conception à la réalisation, en toute indépendance.</p>
+                <div class="skill__bar"><div class="skill__fill" data-width="88"></div></div>
+              </div>
+
+              <div class="skill">
+                <div class="skill__header">
+                  <span class="skill__name">Empathie</span>
+                  <span class="skill__pct">85%</span>
+                </div>
+                <p class="skill__desc">Écoute active et compréhension des besoins pour mieux adapter les messages et les stratégies de communication.</p>
+                <div class="skill__bar"><div class="skill__fill" data-width="85"></div></div>
+              </div>
+
+              <div class="skill">
+                <div class="skill__header">
+                  <span class="skill__name">Adaptabilité</span>
+                  <span class="skill__pct">85%</span>
+                </div>
+                <p class="skill__desc">Aisance à évoluer dans des environnements variés, de l'agence de communication à la grande entreprise.</p>
+                <div class="skill__bar"><div class="skill__fill" data-width="85"></div></div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Hard skills -->
+          <div class="competences__col fade-in">
+            <h3 class="competences__col-title">Compétences</h3>
+            <div class="skill-list">
+
+              <div class="skill">
+                <div class="skill__header">
+                  <span class="skill__name">Réseaux sociaux</span>
+                  <span class="skill__pct">85%</span>
+                </div>
+                <p class="skill__desc">Gestion, animation et amélioration de comptes Instagram et Facebook, création de contenus vidéo.</p>
+                <div class="skill__bar"><div class="skill__fill" data-width="85"></div></div>
+              </div>
+
+              <div class="skill">
+                <div class="skill__header">
+                  <span class="skill__name">Stratégie de communication</span>
+                  <span class="skill__pct">80%</span>
+                </div>
+                <p class="skill__desc">Mise en place de plans de communication interne et externe, veille stratégique et concurrentielle.</p>
+                <div class="skill__bar"><div class="skill__fill" data-width="80"></div></div>
+              </div>
+
+              <div class="skill">
+                <div class="skill__header">
+                  <span class="skill__name">Création de supports visuels</span>
+                  <span class="skill__pct">80%</span>
+                </div>
+                <p class="skill__desc">Conception de visuels print et digitaux à l'aide d'Adobe, Canva et Figma.</p>
+                <div class="skill__bar"><div class="skill__fill" data-width="80"></div></div>
+              </div>
+
+              <div class="skill">
+                <div class="skill__header">
+                  <span class="skill__name">Organisation événementielle</span>
+                  <span class="skill__pct">75%</span>
+                </div>
+                <p class="skill__desc">Préparation et animation d'événements, coordination des partenaires et intervenants.</p>
+                <div class="skill__bar"><div class="skill__fill" data-width="75"></div></div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Badges compétences -->
+        <div class="badges fade-in">
+          <span class="badge">Communication interne</span>
+          <span class="badge">Communication externe</span>
+          <span class="badge">Réseaux sociaux</span>
+          <span class="badge">Création de contenu</span>
+          <span class="badge">Supports visuels</span>
+          <span class="badge">Événementiel</span>
+          <span class="badge">Veille stratégique</span>
+          <span class="badge">Stratégie de marque</span>
+          <span class="badge">Marketing digital</span>
+          <span class="badge">Anglais bilingue</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4 : OUTILS & LOGICIELS ===== -->
+    <section class="section section--alt" id="outils">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__label">04</span>
+          <h2 class="section__title">Outils & logiciels</h2>
+        </div>
+
+        <div class="outils__grid">
+
+          <div class="outil-card card fade-in">
+            <div class="outil-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
+                <path d="M14 28L20 12L26 28M16.5 22H23.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 14H28" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
+              </svg>
+            </div>
+            <h4 class="outil-card__name">Suite Adobe</h4>
+            <p class="outil-card__desc">Photoshop · Illustrator · Premiere</p>
+          </div>
+
+          <div class="outil-card card fade-in">
+            <div class="outil-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
+                <rect x="12" y="12" width="7" height="7" rx="1" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="21" y="12" width="7" height="7" rx="1" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="12" y="21" width="7" height="7" rx="1" stroke="var(--accent)" stroke-width="2"/>
+                <rect x="21" y="21" width="7" height="7" rx="1" stroke="var(--accent)" stroke-width="2"/>
+              </svg>
+            </div>
+            <h4 class="outil-card__name">Pack Office</h4>
+            <p class="outil-card__desc">Word · Excel · PowerPoint</p>
+          </div>
+
+          <div class="outil-card card fade-in">
+            <div class="outil-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
+                <circle cx="20" cy="20" r="7" stroke="var(--accent)" stroke-width="2"/>
+                <path d="M20 15V20L24 23" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+                <path d="M13 13L27 27" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" opacity=".4"/>
+              </svg>
+            </div>
+            <h4 class="outil-card__name">Canva</h4>
+            <p class="outil-card__desc">Design graphique & visuels</p>
+          </div>
+
+          <div class="outil-card card fade-in">
+            <div class="outil-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
+                <path d="M20 12L20 20M20 20L14 14M20 20L26 14" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="20" cy="25" r="3" stroke="var(--accent)" stroke-width="2"/>
+                <circle cx="14" cy="14" r="2" stroke="var(--accent)" stroke-width="1.5"/>
+                <circle cx="26" cy="14" r="2" stroke="var(--accent)" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h4 class="outil-card__name">Figma</h4>
+            <p class="outil-card__desc">UI design & prototypage</p>
+          </div>
+
+          <div class="outil-card card fade-in">
+            <div class="outil-card__icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
+                <rect x="12" y="14" width="16" height="3" rx="1" stroke="var(--accent)" stroke-width="1.5"/>
+                <rect x="12" y="20" width="10" height="3" rx="1" stroke="var(--accent)" stroke-width="1.5"/>
+                <rect x="12" y="26" width="13" height="3" rx="1" stroke="var(--accent)" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h4 class="outil-card__name">Gantt Project</h4>
+            <p class="outil-card__desc">Gestion & planification de projets</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 5 : PASSIONS ===== -->
+    <section class="section" id="passions">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__label">05</span>
+          <h2 class="section__title">Passions</h2>
+        </div>
+
+        <div class="passions__grid">
+
+          <a href="passion-cinema.html" class="passion-card card fade-in passion-card--link">
+            <div class="passion-card__visual passion-card__visual--1">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="30" cy="30" r="30" fill="white" opacity=".15"/>
+                <rect x="16" y="20" width="28" height="20" rx="2" stroke="white" stroke-width="2"/>
+                <path d="M22 20V18M38 20V18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="30" cy="30" r="5" stroke="white" stroke-width="2"/>
+                <path d="M27 30L29 32L33 28" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="passion-card__body">
+              <h3 class="passion-card__title">Cinéma de genre</h3>
+              <p>Grand fan du cinéma fantastique, de science-fiction et d'horreur des années 80-90. Une époque dorée pour les effets spéciaux pratiques et les histoires imaginatives.</p>
+              <span class="passion-card__cta">Découvrir →</span>
+            </div>
+          </a>
+
+          <a href="passion-japon.html" class="passion-card card fade-in passion-card--link">
+            <div class="passion-card__visual passion-card__visual--2">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="30" cy="30" r="30" fill="white" opacity=".15"/>
+                <path d="M20 38C20 38 22 30 30 22C38 30 40 38 40 38" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <path d="M26 34C26 34 27 29 30 26C33 29 34 34 34 34" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="30" cy="20" r="2" stroke="white" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="passion-card__body">
+              <h3 class="passion-card__title">Culture japonaise</h3>
+              <p>Passionné par la culture japonaise dans toutes ses formes : art, cinéma, musique et traditions. Un univers créatif qui influence ma sensibilité esthétique au quotidien.</p>
+              <span class="passion-card__cta">Découvrir →</span>
+            </div>
+          </a>
+
+          <a href="passion-figurines.html" class="passion-card card fade-in passion-card--link">
+            <div class="passion-card__visual passion-card__visual--3">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="30" cy="30" r="30" fill="white" opacity=".15"/>
+                <path d="M22 38C24 34 26 32 30 30C34 32 36 34 38 38" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <path d="M30 30C30 30 26 26 26 22C26 19.791 27.791 18 30 18C32.209 18 34 19.791 34 22C34 26 30 30 30 30Z" stroke="white" stroke-width="2"/>
+                <path d="M20 38H40" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity=".6"/>
+              </svg>
+            </div>
+            <div class="passion-card__body">
+              <h3 class="passion-card__title">Réalisation et création de figurines</h3>
+              <p>La réalisation et création de figurines et autres projets est pour moi une pratique créative et méticuleuse qui développe la patience, le souci du détail et l'expression artistique — des qualités transposables dans tous mes projets.</p>
+              <span class="passion-card__cta">Découvrir →</span>
+            </div>
+          </a>
+
+          <a href="passion-jeux.html" class="passion-card card fade-in passion-card--link">
+            <div class="passion-card__visual passion-card__visual--4">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="30" cy="30" r="30" fill="white" opacity=".15"/>
+                <rect x="13" y="22" width="34" height="20" rx="4" stroke="white" stroke-width="2"/>
+                <path d="M22 30V34M20 32H24" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="37" cy="31" r="1.5" fill="white"/>
+                <circle cx="41" cy="31" r="1.5" fill="white"/>
+                <path d="M24 22V19M36 22V19" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity=".6"/>
+              </svg>
+            </div>
+            <div class="passion-card__body">
+              <h3 class="passion-card__title">Jeux vidéo</h3>
+              <p>Le jeu vidéo comme terrain d'exploration narrative, esthétique et interactive. Un médium qui nourrit ma créativité et ma sensibilité au game design et à la direction artistique.</p>
+              <span class="passion-card__cta">Découvrir →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__name">Jules Simeray</p>
+      <div class="footer__socials">
+        <a href="#" class="footer__social" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="#" class="footer__social" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="#" class="footer__social" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 4l16 16M4 20L20 4"/>
+          </svg>
+        </a>
+      </div>
+      <p class="footer__copy">&copy; 2026 Jules Simeray — Tous droits réservés · jules.simeray@gmail.com · 06 26 17 25 81</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
