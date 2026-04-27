@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeux vidéo — Jules Simeray</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="passion.css" />
+</head>
+<body>
+
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">Jules Simeray</a>
+      <ul class="nav__menu" id="nav-menu">
+        <li><a href="index.html#experiences" class="nav__link">Expériences</a></li>
+        <li><a href="index.html#histoire" class="nav__link">Mon histoire</a></li>
+        <li><a href="index.html#competences" class="nav__link">Compétences</a></li>
+        <li><a href="index.html#passions" class="nav__link">Passions</a></li>
+        <li><a href="cv.html" class="nav__link nav__link--cv">Mon CV</a></li>
+      </ul>
+      <button class="nav__burger" id="nav-burger" aria-label="Menu" aria-expanded="false">
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+        <span class="burger__line"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="passion-hero passion-hero--jeux">
+      <div class="container passion-hero__inner">
+        <a href="index.html#passions" class="passion-hero__back">← Retour aux passions</a>
+        <p class="passion-hero__label">Passion</p>
+        <h1 class="passion-hero__title">Jeux<br /><span class="accent">Vidéo</span></h1>
+        <p class="passion-hero__sub">Exploration de mondes, défis mécaniques et récits interactifs — le jeu vidéo comme forme d'art à part entière.</p>
+      </div>
+    </section>
+
+    <!-- GRILLE JEUX -->
+    <section class="section manga-section manga-section--jeux">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__label">Jeux</span>
+          <h2 class="section__title">Ma ludothèque</h2>
+        </div>
+
+        <div class="manga-grid">
+
+          <!-- 1 — Street Fighter II · 1991 -->
+          <a href="game-street-fighter-2.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://images.launchbox-app.com/c937151a-b7b5-45a7-9274-a839192b498c.jpg"
+                     alt="Affiche de Street Fighter II" />
+              </div>
+            </div>
+            <p class="manga-title">Street Fighter II</p>
+            <p class="manga-year">1991 · Capcom</p>
+          </a>
+
+          <!-- 2 — Mega Man X · 1993 -->
+          <a href="game-megaman-x.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://images.launchbox-app.com/r2_67d83d19-efa3-4114-9ce1-2ad24796be9a.jpg"
+                     alt="Affiche de Mega Man X" />
+              </div>
+            </div>
+            <p class="manga-title">Mega Man X</p>
+            <p class="manga-year">1993 · Capcom</p>
+          </a>
+
+          <!-- 3 — Silent Hill 2 · 2001 -->
+          <a href="game-silent-hill-2.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/95/Silent_Hill_2.jpg"
+                     alt="Affiche de Silent Hill 2" />
+              </div>
+            </div>
+            <p class="manga-title">Silent Hill 2</p>
+            <p class="manga-year">2001 · Konami</p>
+          </a>
+
+          <!-- 4 — Phoenix Wright: Ace Attorney · 2001 -->
+          <a href="game-ace-attorney.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://images.nintendolife.com/f2fcb4defa59b/phoenix-wright-ace-attorney-eu.900x.jpg"
+                     alt="Affiche de Phoenix Wright: Ace Attorney" />
+              </div>
+            </div>
+            <p class="manga-title">Phoenix Wright: Ace Attorney</p>
+            <p class="manga-year">2001 · Capcom</p>
+          </a>
+
+          <!-- 5 — Metroid Fusion · 2002 -->
+          <a href="game-metroid-fusion.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://images.launchbox-app.com/0f4e70dc-3a84-4ac5-86a9-f47f5399c04e.jpg"
+                     alt="Affiche de Metroid Fusion" />
+              </div>
+            </div>
+            <p class="manga-title">Metroid Fusion</p>
+            <p class="manga-year">2002 · Nintendo</p>
+          </a>
+
+          <!-- 6 — Metroid Prime Hunters · 2006 -->
+          <a href="game-metroid-prime-hunters.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://images.launchbox-app.com/9526e25e-ac2f-4452-8960-f18f882650e7.jpg"
+                     alt="Affiche de Metroid Prime Hunters" />
+              </div>
+            </div>
+            <p class="manga-title">Metroid Prime Hunters</p>
+            <p class="manga-year">2006 · Nintendo</p>
+          </a>
+
+          <!-- 7 — Metal Gear Rising: Revengeance · 2013 -->
+          <a href="game-metal-gear-rising.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/235460/library_600x900.jpg"
+                     alt="Affiche de Metal Gear Rising: Revengeance" />
+              </div>
+            </div>
+            <p class="manga-title">Metal Gear Rising: Revengeance</p>
+            <p class="manga-year">2013 · PlatinumGames</p>
+          </a>
+
+          <!-- 8 — Undertale · 2015 -->
+          <a href="game-undertale.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/391540/library_600x900.jpg"
+                     alt="Affiche de Undertale" />
+              </div>
+            </div>
+            <p class="manga-title">Undertale</p>
+            <p class="manga-year">2015 · Toby Fox</p>
+          </a>
+
+          <!-- 9 — Dark Souls III · 2016 -->
+          <a href="game-dark-souls-3.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/374320/library_600x900.jpg"
+                     alt="Affiche de Dark Souls III" />
+              </div>
+            </div>
+            <p class="manga-title">Dark Souls III</p>
+            <p class="manga-year">2016 · FromSoftware</p>
+          </a>
+
+          <!-- 10 — Monster Hunter Generations · 2016 -->
+          <a href="game-mh-generations.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://upload.wikimedia.org/wikipedia/en/2/23/Monster_hunter_generations_cover_art.jpg"
+                     alt="Affiche de Monster Hunter Generations" />
+              </div>
+            </div>
+            <p class="manga-title">Monster Hunter Generations</p>
+            <p class="manga-year">2016 · Capcom</p>
+          </a>
+
+          <!-- 11 — Persona 5 · 2016 -->
+          <a href="game-persona-5.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/b0/Persona_5_cover_art.jpg"
+                     alt="Affiche de Persona 5" />
+              </div>
+            </div>
+            <p class="manga-title">Persona 5</p>
+            <p class="manga-year">2016 · Atlus</p>
+          </a>
+
+          <!-- 12 — Nier: Automata · 2017 -->
+          <a href="game-nier-automata.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/524220/library_600x900.jpg"
+                     alt="Affiche de Nier: Automata" />
+              </div>
+            </div>
+            <p class="manga-title">Nier: Automata</p>
+            <p class="manga-year">2017 · PlatinumGames</p>
+          </a>
+
+          <!-- 13 — Hollow Knight · 2017 -->
+          <a href="game-hollow-knight.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/367520/library_600x900.jpg"
+                     alt="Affiche de Hollow Knight" />
+              </div>
+            </div>
+            <p class="manga-title">Hollow Knight</p>
+            <p class="manga-year">2017 · Team Cherry</p>
+          </a>
+
+          <!-- 14 — Monster Hunter World · 2018 -->
+          <a href="game-monster-hunter-world.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/582010/library_600x900.jpg"
+                     alt="Affiche de Monster Hunter World" />
+              </div>
+            </div>
+            <p class="manga-title">Monster Hunter World</p>
+            <p class="manga-year">2018 · Capcom</p>
+          </a>
+
+          <!-- 15 — Dead Cells · 2018 -->
+          <a href="game-dead-cells.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/588650/library_600x900.jpg"
+                     alt="Affiche de Dead Cells" />
+              </div>
+            </div>
+            <p class="manga-title">Dead Cells</p>
+            <p class="manga-year">2018 · Motion Twin</p>
+          </a>
+
+          <!-- 16 — Fear & Hunger · 2018 -->
+          <a href="game-fear-and-hunger.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://upload.wikimedia.org/wikipedia/en/6/69/Fear_%26_Hunger.jpg"
+                     alt="Affiche de Fear &amp; Hunger" />
+              </div>
+            </div>
+            <p class="manga-title">Fear &amp; Hunger</p>
+            <p class="manga-year">2018 · Miro Haverinen</p>
+          </a>
+
+          <!-- 17 — Death Stranding · 2019 -->
+          <a href="game-death-stranding.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://upload.wikimedia.org/wikipedia/en/2/22/Death_Stranding.jpg"
+                     alt="Affiche de Death Stranding" />
+              </div>
+            </div>
+            <p class="manga-title">Death Stranding</p>
+            <p class="manga-year">2019 · Kojima Productions</p>
+          </a>
+
+          <!-- 18 — The Binding of Isaac: Repentance · 2021 -->
+          <a href="game-binding-of-isaac.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/250900/library_600x900.jpg"
+                     alt="Affiche de The Binding of Isaac: Repentance" />
+              </div>
+            </div>
+            <p class="manga-title">The Binding of Isaac: Repentance</p>
+            <p class="manga-year">2021 · Edmund McMillen</p>
+          </a>
+
+          <!-- 19 — Elden Ring · 2022 -->
+          <a href="game-elden-ring.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/library_600x900.jpg"
+                     alt="Affiche de Elden Ring" />
+              </div>
+            </div>
+            <p class="manga-title">Elden Ring</p>
+            <p class="manga-year">2022 · FromSoftware</p>
+          </a>
+
+          <!-- 20 — Cult of the Lamb · 2022 -->
+          <a href="game-cult-of-the-lamb.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1313140/library_600x900.jpg"
+                     alt="Affiche de Cult of the Lamb" />
+              </div>
+            </div>
+            <p class="manga-title">Cult of the Lamb</p>
+            <p class="manga-year">2022 · Massive Monster</p>
+          </a>
+
+          <!-- 21 — Clair Obscur: Expedition 33 · 2025 -->
+          <a href="game-expedition-33.html" class="manga-item fade-in">
+            <div class="game-cover-wrap">
+              <div class="game-book">
+                <img src="https://upload.wikimedia.org/wikipedia/en/5/5a/Clair_Obscur%2C_Expedition_33_Cover_1.webp"
+                     alt="Affiche de Clair Obscur: Expedition 33" />
+              </div>
+            </div>
+            <p class="manga-title">Clair Obscur: Expedition 33</p>
+            <p class="manga-year">2025 · Sandfall Interactive</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__name">Jules Simeray</p>
+      <p class="footer__copy">&copy; 2026 Jules Simeray — Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
