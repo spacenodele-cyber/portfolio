@@ -124,6 +124,72 @@ ul { list-style: none; }
   color: var(--accent) !important;
 }
 
+/* Theme switcher */
+.nav__theme-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.theme-toggle:hover { border-color: rgba(255,255,255,0.2); }
+
+.theme-toggle__dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.theme-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  display: flex;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 200;
+}
+
+.theme-dropdown.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.theme-swatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color 0.2s, transform 0.15s;
+}
+
+.theme-swatch:hover { transform: scale(1.15); }
+
+.theme-swatch.active { border-color: var(--white); }
+
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -693,6 +759,10 @@ ul { list-style: none; }
   line-height: 1.85;
 }
 
+.exp-block p + p {
+  margin-top: 1rem;
+}
+
 /* ---------------------------------------------------------
    8. MON HISTOIRE
    --------------------------------------------------------- */
@@ -1158,4 +1228,362 @@ ul { list-style: none; }
   .passions__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* =========================================================
+   TERMINAL / PIXEL RETRO THEME — [data-theme="vaporwave"]
+   ========================================================= */
+
+/* --- Animations --- */
+@keyframes vp-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@keyframes vp-flicker {
+  0%, 92%, 100% { opacity: 1; }
+  93% { opacity: 0.82; }
+  95% { opacity: 0.95; }
+  97% { opacity: 0.88; }
+}
+
+[data-theme="vaporwave"] {
+  --bg:         #000900;
+  --bg-alt:     #001200;
+  --surface:    #001a00;
+  --border:     #00ff41;
+  --text:       #00ff41;
+  --text-muted: #006622;
+  --accent:     #00ff41;
+  --accent-2:   #00cc33;
+  --radius-sm:  0px;
+  --radius-md:  0px;
+  --radius-lg:  0px;
+  --shadow:     4px 4px 0 #003311;
+  --shadow-sm:  2px 2px 0 #003311;
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-vt:    'VT323', monospace;
+}
+
+/* Héritage de couleur — plus performant qu'un sélecteur universel */
+[data-theme="vaporwave"] body { color: #00ff41; }
+[data-theme="vaporwave"] a,
+[data-theme="vaporwave"] p,
+[data-theme="vaporwave"] h1, [data-theme="vaporwave"] h2,
+[data-theme="vaporwave"] h3, [data-theme="vaporwave"] h4,
+[data-theme="vaporwave"] span, [data-theme="vaporwave"] li,
+[data-theme="vaporwave"] label, [data-theme="vaporwave"] small { color: inherit; }
+
+/* Grille pixel verte */
+[data-theme="vaporwave"] body {
+  background-color: #000900;
+  background-image:
+    linear-gradient(rgba(0,255,65,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,65,0.06) 1px, transparent 1px),
+    linear-gradient(rgba(0,255,65,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,65,0.02) 1px, transparent 1px);
+  background-size: 24px 24px, 24px 24px, 120px 120px, 120px 120px;
+}
+
+/* Scanlines statiques — pas d'animation, pas de repaint 60fps */
+[data-theme="vaporwave"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0,0,0,0.1) 2px,
+    rgba(0,0,0,0.1) 4px
+  );
+  pointer-events: none;
+  z-index: 9998;
+  will-change: auto;
+}
+
+/* Vignette CRT */
+[data-theme="vaporwave"] body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.72) 100%);
+  pointer-events: none;
+  z-index: 9997;
+}
+
+/* GPU layer pour les éléments avec transition transform */
+[data-theme="vaporwave"] .card,
+[data-theme="vaporwave"] .btn,
+[data-theme="vaporwave"] .timeline__content,
+[data-theme="vaporwave"] .passion-card,
+[data-theme="vaporwave"] .outils__item { will-change: transform; }
+
+/* --- HEADER / HUD --- */
+[data-theme="vaporwave"] .header {
+  background: rgba(0,9,0,0.97);
+  border-bottom: 3px solid #00ff41;
+  box-shadow: 0 3px 0 #003311;
+  backdrop-filter: none;
+}
+[data-theme="vaporwave"] .nav__logo {
+  font-family: var(--font-pixel);
+  font-size: 0.6rem;
+  text-shadow: 2px 2px 0 #003311, 0 0 12px rgba(0,255,65,0.6);
+  letter-spacing: 0.06em;
+}
+[data-theme="vaporwave"] .nav__link {
+  font-family: var(--font-pixel);
+  font-size: 0.43rem;
+  letter-spacing: 0.03em;
+}
+[data-theme="vaporwave"] .nav__link:hover,
+[data-theme="vaporwave"] .nav__link.active { text-shadow: 0 0 10px rgba(0,255,65,0.9); }
+[data-theme="vaporwave"] .nav__link::after { background: #00ff41; height: 2px; }
+[data-theme="vaporwave"] .nav__link--cv {
+  font-family: var(--font-pixel);
+  font-size: 0.43rem;
+  border: 2px solid #00ff41 !important;
+  border-radius: 0;
+  box-shadow: 2px 2px 0 #003311;
+}
+[data-theme="vaporwave"] .nav__link--cv:hover {
+  background: #00ff41;
+  color: #000900 !important;
+  transform: translate(2px,2px);
+  box-shadow: none;
+}
+
+/* --- HERO --- */
+[data-theme="vaporwave"] .hero {
+  background: linear-gradient(to bottom, rgba(0,255,65,0.04) 0%, transparent 45%), #000900;
+}
+[data-theme="vaporwave"] .hero__title {
+  font-family: var(--font-vt);
+  font-size: clamp(4rem, 12vw, 10rem);
+  text-shadow: 4px 4px 0 #003311, 0 0 30px rgba(0,255,65,0.5);
+  background: none;
+  -webkit-text-fill-color: #00ff41;
+  background-clip: unset;
+  -webkit-background-clip: unset;
+  filter: none;
+  animation: vp-flicker 9s infinite;
+}
+[data-theme="vaporwave"] .hero__title .accent {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #39ff14;
+  background-clip: unset;
+  text-shadow: 4px 4px 0 #003311;
+}
+[data-theme="vaporwave"] .hero__sub {
+  font-family: var(--font-vt);
+  font-size: 1.45rem;
+  letter-spacing: 0.04em;
+}
+[data-theme="vaporwave"] .hero__sub::after {
+  content: '█';
+  display: inline-block;
+  margin-left: 3px;
+  animation: vp-blink 1s step-end infinite;
+}
+[data-theme="vaporwave"] .hero__tag {
+  font-family: var(--font-pixel);
+  font-size: 0.4rem;
+  background: transparent;
+  border: 2px solid #00ff41 !important;
+  border-radius: 0;
+  padding: 6px 10px;
+  box-shadow: 2px 2px 0 #003311;
+}
+
+/* --- BUTTONS --- */
+[data-theme="vaporwave"] .btn {
+  border-radius: 0;
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  letter-spacing: 0.04em;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+[data-theme="vaporwave"] .btn--primary {
+  background: #00ff41;
+  border: 2px solid #00ff41;
+  color: #000900 !important;
+  box-shadow: 4px 4px 0 #003311;
+}
+[data-theme="vaporwave"] .btn--primary:hover { transform: translate(4px,4px); box-shadow: none; }
+[data-theme="vaporwave"] .btn--outline {
+  background: transparent;
+  border: 2px solid #00ff41;
+  box-shadow: 4px 4px 0 #003311;
+}
+[data-theme="vaporwave"] .btn--outline:hover {
+  background: #00ff41;
+  color: #000900 !important;
+  transform: translate(4px,4px);
+  box-shadow: none;
+}
+
+/* --- SECTIONS --- */
+[data-theme="vaporwave"] .section__label {
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  text-shadow: 1px 1px 0 #003311;
+  letter-spacing: 0.2em;
+}
+[data-theme="vaporwave"] .section__title {
+  font-family: var(--font-vt);
+  text-shadow: 3px 3px 0 #003311;
+}
+[data-theme="vaporwave"] .section--alt {
+  background: rgba(0,18,0,0.92);
+  border-top: 2px solid rgba(0,255,65,0.25);
+  border-bottom: 2px solid rgba(0,255,65,0.25);
+}
+
+/* --- CARDS --- */
+[data-theme="vaporwave"] .card {
+  background: rgba(0,26,0,0.95);
+  border: 2px solid #00ff41;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #003311;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+[data-theme="vaporwave"] .card:hover { transform: translate(4px,4px); box-shadow: none; }
+
+/* --- TIMELINE --- */
+[data-theme="vaporwave"] .timeline__dot {
+  background: #00ff41;
+  border: 2px solid #00ff41;
+  border-radius: 0;
+  box-shadow: 2px 2px 0 #003311;
+}
+[data-theme="vaporwave"] .timeline__item:hover .timeline__dot {
+  box-shadow: 2px 2px 0 #003311, 0 0 12px rgba(0,255,65,0.9);
+}
+[data-theme="vaporwave"] .timeline__content {
+  background: rgba(0,26,0,0.95);
+  border: 2px solid rgba(0,255,65,0.5);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 #003311;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+[data-theme="vaporwave"] .timeline__item:hover .timeline__content {
+  border-color: #00ff41;
+  box-shadow: 3px 3px 0 #003311, 0 0 15px rgba(0,255,65,0.3);
+}
+[data-theme="vaporwave"] .timeline__date { font-family: var(--font-pixel); font-size: 0.42rem; }
+[data-theme="vaporwave"] .timeline__role { font-family: var(--font-vt); font-size: 1.15rem; }
+[data-theme="vaporwave"] .timeline__company { font-family: var(--font-pixel); font-size: 0.45rem; }
+
+/* --- PASSION CARDS --- */
+[data-theme="vaporwave"] .passion-card {
+  background: rgba(0,26,0,0.95);
+  border: 2px solid rgba(0,255,65,0.6);
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #003311;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+[data-theme="vaporwave"] .passion-card--link:hover { transform: translate(4px,4px); box-shadow: none; }
+[data-theme="vaporwave"] .passion-card__visual--1,
+[data-theme="vaporwave"] .passion-card__visual--2,
+[data-theme="vaporwave"] .passion-card__visual--3,
+[data-theme="vaporwave"] .passion-card__visual--4 { background: linear-gradient(135deg, #001a00, #003300); }
+[data-theme="vaporwave"] .passion-card__title { font-family: var(--font-vt); font-size: 1.35rem; }
+[data-theme="vaporwave"] .passion-card__cta { font-family: var(--font-pixel); font-size: 0.45rem; }
+
+/* --- HISTOIRE --- */
+[data-theme="vaporwave"] .histoire__photo-wrap {
+  border: 2px solid #00ff41;
+  border-radius: 0;
+  box-shadow: 6px 6px 0 #003311;
+}
+[data-theme="vaporwave"] .histoire__lead { font-family: var(--font-vt); font-size: 1.25rem; }
+
+/* --- OUTILS --- */
+[data-theme="vaporwave"] .outils__item {
+  background: rgba(0,26,0,0.95);
+  border: 2px solid rgba(0,255,65,0.5);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 #003311;
+  transition: transform 0.08s, box-shadow 0.08s;
+}
+[data-theme="vaporwave"] .outils__item:hover { transform: translate(3px,3px); box-shadow: none; }
+
+/* --- FOOTER --- */
+[data-theme="vaporwave"] .footer {
+  background: #000900;
+  border-top: 3px solid #00ff41;
+  box-shadow: 0 -3px 0 #003311;
+}
+[data-theme="vaporwave"] .footer__name {
+  font-family: var(--font-pixel);
+  font-size: 0.55rem;
+  text-shadow: 2px 2px 0 #003311;
+}
+[data-theme="vaporwave"] .footer__copy { font-family: var(--font-pixel); font-size: 0.38rem; }
+
+/* --- THEME TOGGLE --- */
+[data-theme="vaporwave"] .theme-toggle {
+  background: rgba(0,26,0,0.98);
+  border: 2px solid #00ff41 !important;
+  border-radius: 0;
+  box-shadow: 2px 2px 0 #003311;
+}
+[data-theme="vaporwave"] .theme-dropdown {
+  background: rgba(0,9,0,0.99);
+  border: 2px solid #00ff41;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #003311;
+}
+[data-theme="vaporwave"] .theme-swatch { border-radius: 0; }
+
+/* --- PAGES EXPÉRIENCES --- */
+[data-theme="vaporwave"] .exp-hero {
+  background: linear-gradient(to bottom, rgba(0,255,65,0.05) 0%, transparent 50%), #000900;
+  border-bottom: 3px solid #00ff41;
+  box-shadow: 0 3px 0 #003311;
+}
+[data-theme="vaporwave"] .exp-hero__back { font-family: var(--font-pixel); font-size: 0.45rem; }
+[data-theme="vaporwave"] .exp-hero__role {
+  font-family: var(--font-vt);
+  font-size: clamp(2rem, 6vw, 4rem);
+  text-shadow: 3px 3px 0 #003311;
+}
+[data-theme="vaporwave"] .exp-hero__company { font-family: var(--font-pixel); font-size: 0.5rem; }
+[data-theme="vaporwave"] .exp-hero__date { font-family: var(--font-pixel); font-size: 0.42rem; }
+[data-theme="vaporwave"] .exp-block {
+  background: rgba(0,26,0,0.95);
+  border: 2px solid rgba(0,255,65,0.5);
+  border-radius: 0;
+  box-shadow: 3px 3px 0 #003311;
+}
+[data-theme="vaporwave"] .exp-block__label {
+  font-family: var(--font-pixel);
+  font-size: 0.5rem;
+  text-shadow: 1px 1px 0 #003311;
+}
+
+/* --- PAGE CV --- */
+[data-theme="vaporwave"] .cv__section-title {
+  font-family: var(--font-vt);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 0 #003311;
+  border-bottom: 2px solid rgba(0,255,65,0.4);
+}
+[data-theme="vaporwave"] .cv__exp-company { font-family: var(--font-pixel); font-size: 0.45rem; }
+
+/* --- PAGES PASSIONS --- */
+[data-theme="vaporwave"] .passion-hero {
+  background: linear-gradient(to bottom, rgba(0,255,65,0.05) 0%, transparent 50%), #000900;
+}
+[data-theme="vaporwave"] .passion-hero__title {
+  font-family: var(--font-vt);
+  text-shadow: 3px 3px 0 #003311;
+}
+[data-theme="vaporwave"] .passion-hero__title .accent {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #39ff14;
+  background-clip: unset;
+  text-shadow: 2px 2px 0 #003311;
 }

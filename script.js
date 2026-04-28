@@ -181,7 +181,146 @@ if (window.matchMedia('(pointer: fine) and (prefers-reduced-motion: no-preferenc
 }
 
 /* ---------------------------------------------------------
-   9. EASTER EGG — The Pillar Men (tapez "pilar" n'importe où)
+   9. PROCESS PHOTOS — carousel scroll + compteur
+   --------------------------------------------------------- */
+(function () {
+  document.querySelectorAll('.process-photos').forEach(strip => {
+    const slides = strip.querySelectorAll('.process-photo');
+    if (slides.length <= 1) return;
+
+    strip.dataset.count = `1 / ${slides.length}`;
+
+    strip.addEventListener('scroll', () => {
+      const index = Math.round(strip.scrollLeft / strip.clientWidth) + 1;
+      strip.dataset.count = `${index} / ${slides.length}`;
+    }, { passive: true });
+  });
+})();
+
+/* ---------------------------------------------------------
+   10. PEINTURE LIGHTBOX
+   --------------------------------------------------------- */
+(function () {
+  const gallery = document.querySelector('.peinture-gallery');
+  if (!gallery) return;
+
+  const lightbox  = document.getElementById('lightbox');
+  const lbImg     = document.getElementById('lb-img');
+  const lbClose   = document.getElementById('lb-close');
+  const lbPrev    = document.getElementById('lb-prev');
+  const lbNext    = document.getElementById('lb-next');
+  const lbCounter = document.getElementById('lb-counter');
+
+  const items = [...gallery.querySelectorAll('.peinture-img-wrap img')];
+  let current = 0;
+
+  function open(index) {
+    current = index;
+    update();
+    lightbox.classList.add('lightbox--open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lightbox.classList.remove('lightbox--open');
+    document.body.style.overflow = '';
+  }
+
+  function update() {
+    const img  = items[current];
+    lbImg.src  = img.src;
+    lbImg.alt  = img.alt;
+    lbCounter.textContent = `${current + 1} / ${items.length}`;
+    lbPrev.style.visibility = current === 0                  ? 'hidden' : 'visible';
+    lbNext.style.visibility = current === items.length - 1  ? 'hidden' : 'visible';
+  }
+
+  function prev() { if (current > 0)                 { current--; update(); } }
+  function next() { if (current < items.length - 1)  { current++; update(); } }
+
+  gallery.querySelectorAll('.peinture-img-wrap').forEach((wrap, i) => {
+    wrap.addEventListener('click', () => open(i));
+  });
+
+  lbClose.addEventListener('click', close);
+  lbPrev.addEventListener('click',  prev);
+  lbNext.addEventListener('click',  next);
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) close();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('lightbox--open')) return;
+    if (e.key === 'Escape')      close();
+    if (e.key === 'ArrowLeft')   prev();
+    if (e.key === 'ArrowRight')  next();
+  });
+})();
+
+/* ---------------------------------------------------------
+   10. PROCESS LIGHTBOX
+   --------------------------------------------------------- */
+(function () {
+  const section = document.querySelector('.process-section');
+  if (!section) return;
+
+  const lightbox  = document.getElementById('lightbox');
+  const lbImg     = document.getElementById('lb-img');
+  const lbClose   = document.getElementById('lb-close');
+  const lbPrev    = document.getElementById('lb-prev');
+  const lbNext    = document.getElementById('lb-next');
+  const lbCounter = document.getElementById('lb-counter');
+
+  const items = [...section.querySelectorAll('.process-photo img')].filter(img => img.getAttribute('src'));
+  if (!items.length) return;
+
+  let current = 0;
+
+  function open(index) {
+    current = index;
+    update();
+    lightbox.classList.add('lightbox--open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lightbox.classList.remove('lightbox--open');
+    document.body.style.overflow = '';
+  }
+
+  function update() {
+    const img = items[current];
+    lbImg.src  = img.src;
+    lbImg.alt  = img.alt;
+    lbCounter.textContent = `${current + 1} / ${items.length}`;
+    lbPrev.style.visibility = current === 0                 ? 'hidden' : 'visible';
+    lbNext.style.visibility = current === items.length - 1  ? 'hidden' : 'visible';
+  }
+
+  function prev() { if (current > 0)                { current--; update(); } }
+  function next() { if (current < items.length - 1) { current++; update(); } }
+
+  items.forEach((img, i) => {
+    img.closest('.process-photo').addEventListener('click', () => open(i));
+  });
+
+  lbClose.addEventListener('click', close);
+  lbPrev.addEventListener('click',  prev);
+  lbNext.addEventListener('click',  next);
+
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) close(); });
+
+  document.addEventListener('keydown', e => {
+    if (!lightbox.classList.contains('lightbox--open')) return;
+    if (e.key === 'Escape')     close();
+    if (e.key === 'ArrowLeft')  prev();
+    if (e.key === 'ArrowRight') next();
+  });
+})();
+
+/* ---------------------------------------------------------
+   11. EASTER EGG — The Pillar Men (tapez "pilar" n'importe où)
    --------------------------------------------------------- */
 (function () {
 
@@ -345,5 +484,183 @@ if (window.matchMedia('(pointer: fine) and (prefers-reduced-motion: no-preferenc
     pilarAudio.pause();
     pilarAudio.currentTime = 0;
   }
+
+/* ---------------------------------------------------------
+   13. THEME SWITCHER
+   --------------------------------------------------------- */
+const THEMES = {
+  gold:  { accent: '#c8a96e', accent2: '#8b6f3c' },
+  blue:  { accent: '#00ff41', accent2: '#00cc33' },
+  rose:  { accent: '#d4547b', accent2: '#9e3254' },
+};
+
+/* ----- Matrix rain — RAF + frame throttle à 24 fps ----- */
+let _matrixCanvas = null, _matrixRafId = null;
+
+function startMatrixRain() {
+  if (_matrixCanvas) return;
+  _matrixCanvas = document.createElement('canvas');
+  _matrixCanvas.id = 'vp-matrix';
+  Object.assign(_matrixCanvas.style, {
+    position: 'fixed', top: '0', left: '0',
+    width: '100%', height: '100%',
+    pointerEvents: 'none', zIndex: '3', opacity: '0.08',
+    willChange: 'contents',
+  });
+  document.body.prepend(_matrixCanvas);
+
+  const ctx = _matrixCanvas.getContext('2d', { alpha: false });
+  const CHARS = 'ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿ01アイウエオ{}<>[]#$%&';
+  const SZ = 18; /* plus grand = moins de colonnes = moins de draws */
+  let cols, drops;
+
+  function resize() {
+    _matrixCanvas.width  = window.innerWidth;
+    _matrixCanvas.height = window.innerHeight;
+    cols  = Math.floor(_matrixCanvas.width / SZ);
+    drops = Array(cols).fill(1);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const TARGET_FPS = 24;
+  const FRAME_MS   = 1000 / TARGET_FPS;
+  let lastT = 0;
+
+  function loop(t) {
+    if (!_matrixCanvas) return;
+    _matrixRafId = requestAnimationFrame(loop);
+    if (t - lastT < FRAME_MS) return;
+    lastT = t;
+
+    ctx.fillStyle = 'rgba(0,9,0,0.06)';
+    ctx.fillRect(0, 0, _matrixCanvas.width, _matrixCanvas.height);
+    ctx.fillStyle = '#00ff41';
+    ctx.font = SZ + 'px monospace';
+    for (let i = 0; i < cols; i++) {
+      ctx.fillText(CHARS[Math.random() * CHARS.length | 0], i * SZ, drops[i] * SZ);
+      if (drops[i] * SZ > _matrixCanvas.height && Math.random() > 0.975) drops[i] = 0;
+      drops[i]++;
+    }
+  }
+  _matrixRafId = requestAnimationFrame(loop);
+}
+
+function stopMatrixRain() {
+  cancelAnimationFrame(_matrixRafId); _matrixRafId = null;
+  if (_matrixCanvas) { _matrixCanvas.remove(); _matrixCanvas = null; }
+}
+
+/* ----- Text scramble on scroll — textContent only, pas d'innerHTML ----- */
+const SCRAMBLE_CHARS = '!<>[]{}=+-*?#$@/\\01ｱｲｳｴｵ';
+let _scrambleObs = null;
+
+function scrambleEl(el) {
+  if (el.dataset.vpDone) return;
+  el.dataset.vpDone = '1';
+  const orig = el.textContent;
+  let frame = 0;
+  const total = Math.min(orig.length * 2, 44);
+
+  (function tick() {
+    if (document.documentElement.getAttribute('data-theme') !== 'vaporwave') {
+      el.textContent = orig; return;
+    }
+    frame++;
+    if (frame >= total) { el.textContent = orig; return; }
+    const progress = frame / total;
+    let out = '';
+    for (let i = 0; i < orig.length; i++) {
+      if (orig[i] === ' ' || orig[i] === '\n') { out += orig[i]; continue; }
+      out += i / orig.length < progress
+        ? orig[i]
+        : SCRAMBLE_CHARS[Math.random() * SCRAMBLE_CHARS.length | 0];
+    }
+    el.textContent = out; /* textContent évite le parsing HTML + reflow */
+    requestAnimationFrame(tick);
+  })();
+}
+
+function initVaporwaveEffects() {
+  startMatrixRain();
+  const sel = [
+    '.section__label', '.section__title',
+    '.timeline__role', '.timeline__company', '.timeline__date',
+    '.passion-card__title', '.passion-card__cta',
+    '.exp-block__label', '.exp-hero__company', '.exp-hero__date',
+    '.footer__name', '.footer__copy',
+    '.outils__item__name', '.nav__link',
+  ].join(',');
+
+  _scrambleObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) scrambleEl(e.target); });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll(sel).forEach(el => _scrambleObs.observe(el));
+}
+
+function destroyVaporwaveEffects() {
+  stopMatrixRain();
+  if (_scrambleObs) { _scrambleObs.disconnect(); _scrambleObs = null; }
+  document.querySelectorAll('[data-vp-done]').forEach(el => delete el.dataset.vpDone);
+}
+
+function applyTheme(name) {
+  const t = THEMES[name] || THEMES.gold;
+  document.documentElement.style.setProperty('--accent', t.accent);
+  document.documentElement.style.setProperty('--accent-2', t.accent2);
+
+  if (name === 'blue') {
+    document.documentElement.setAttribute('data-theme', 'vaporwave');
+    if (!document.getElementById('font-vaporwave')) {
+      const link = document.createElement('link');
+      link.id = 'font-vaporwave';
+      link.rel = 'stylesheet';
+      link.href = 'https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap';
+      document.head.appendChild(link);
+    }
+    initVaporwaveEffects();
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    destroyVaporwaveEffects();
+  }
+
+  localStorage.setItem('portfolio-theme', name);
+}
+
+/* Apply saved theme on every page load */
+applyTheme(localStorage.getItem('portfolio-theme') || 'gold');
+
+/* Switcher UI (only present on index.html) */
+const themeToggle   = document.getElementById('theme-toggle');
+const themeDropdown = document.getElementById('theme-dropdown');
+
+if (themeToggle && themeDropdown) {
+  /* Mark the currently active swatch */
+  const saved = localStorage.getItem('portfolio-theme') || 'gold';
+  themeDropdown.querySelector(`[data-theme="${saved}"]`)?.classList.add('active');
+
+  themeToggle.addEventListener('click', e => {
+    e.stopPropagation();
+    const isOpen = themeDropdown.classList.toggle('open');
+    themeToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  themeDropdown.addEventListener('click', e => {
+    e.stopPropagation();
+    const swatch = e.target.closest('.theme-swatch');
+    if (!swatch) return;
+    applyTheme(swatch.dataset.theme);
+    themeDropdown.querySelectorAll('.theme-swatch').forEach(s => s.classList.remove('active'));
+    swatch.classList.add('active');
+    themeDropdown.classList.remove('open');
+    themeToggle.setAttribute('aria-expanded', 'false');
+  });
+
+  document.addEventListener('click', () => {
+    themeDropdown.classList.remove('open');
+    themeToggle.setAttribute('aria-expanded', 'false');
+  });
+}
 
 })();
