@@ -1204,33 +1204,68 @@ ul { list-style: none; }
   .footer__name { text-align: center; }
   .footer__copy { text-align: center; }
 
-  /* Nav burger à partir de 900px */
+  /* Nav burger — panneau droit (50 % écran) */
   .nav__menu {
     position: fixed;
     top: var(--nav-h);
-    left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(14, 15, 17, 0.98);
+    width: 50%;
+    background: #13151a;
+    border-left: 1px solid rgba(255,255,255,0.1);
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2.5rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 9000;
-    padding: 2rem;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 1.5rem 0;
+    transform: translateX(110%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 9001;
+    box-shadow: -16px 0 60px rgba(0,0,0,0.65);
+    overflow-y: auto;
   }
 
   .nav__menu.open {
-    opacity: 1;
-    pointer-events: auto;
+    transform: translateX(0);
+  }
+
+  .nav__menu > li {
+    width: 100%;
   }
 
   .nav__link {
-    font-size: 1.5rem;
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .nav__link::after {
+    display: none;
+  }
+
+  .nav__link:hover,
+  .nav__link.active {
     color: var(--white);
+    background: rgba(255,255,255,0.05);
+  }
+
+  .nav__link--cv {
+    color: var(--accent) !important;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 1rem 1.5rem !important;
+  }
+
+  .nav__theme-item {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
 
   .nav__burger {
@@ -1239,6 +1274,22 @@ ul { list-style: none; }
 
   .hero__card-col {
     display: none;
+  }
+
+  /* Backdrop sombre sur la moitié gauche */
+  .nav__backdrop {
+    position: fixed;
+    inset: var(--nav-h) 0 0 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 9000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+
+  .nav__backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 
