@@ -6,7 +6,7 @@
   <title>Jules Simeray — Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -53,9 +53,9 @@
       <div class="container hero__inner">
 
         <div class="hero__text">
-          <p class="hero__eyebrow">Étudiant en Bachelor Stratégie des Marques · Sup de Pub Lyon</p>
+          <p class="hero__eyebrow">Étudiant en Bachelor Communication Marketing et Digital · Sup de Pub Lyon</p>
           <h1 class="hero__title">Jules<br /><span class="accent">Simeray</span></h1>
-          <p class="hero__sub">Alternant en communication, marketing et digital. Créatif, curieux et empathique, je mets ma passion pour la communication au service de projets qui ont du sens.</p>
+          <p class="hero__sub">Actuellement à la recherche d'une alternance sur 2 ans afin de poursuivre mon master, je suis motivé à utiliser ma créativité et ma passion pour la communication au service de projets qui ont du sens.</p>
           <div class="hero__ctas">
             <a href="#experiences" class="btn btn--primary">Découvrir mon profil</a>
             <a href="cv.html" class="btn btn--outline">
@@ -76,7 +76,7 @@
                 </div>
                 <div class="bcard__front-bottom">
                   <p class="bcard__name">Jules Simeray</p>
-                  <p class="bcard__role">Bachelor Stratégie des Marques</p>
+                  <p class="bcard__role">Bachelor Communication Marketing et Digital</p>
                 </div>
               </div>
 
@@ -188,10 +188,9 @@
 
         <div class="histoire__grid">
           <div class="histoire__text fade-in">
-            <p class="histoire__lead">Passionné de communication et de création, je suis actuellement en Bachelor Stratégie des Marques à Sup de Pub Lyon, en alternance dans le domaine du marketing et du digital.</p>
+            <p class="histoire__lead">Passionné de communication et de création, je suis actuellement en Bachelor Communication Marketing et Digital à Sup de Pub Lyon, en alternance dans le domaine du marketing et du digital.</p>
             <p>Mon parcours a débuté avec un Bac STMG mention Assez Bien au Lycée La Favorite, avant d'intégrer l'ESDES (UCLY) pour préparer un BTS aux programmes grandes écoles. Cette double culture académique m'a permis de développer une approche à la fois rigoureuse et créative de la communication.</p>
             <p>Mes expériences variées — de la communication interne chez Groupama à la gestion des réseaux sociaux pour Sol'art, en passant par l'animation événementielle — m'ont appris à m'adapter rapidement et à travailler en autonomie sur des projets concrets.</p>
-            <p>Anglais bilingue, à l'aise avec les outils créatifs et digitaux, je cherche à mettre mes compétences au service d'une entreprise ambitieuse dans le cadre de mon alternance (rythme : 1 semaine école / 3 semaines entreprise).</p>
           </div>
 
           <div class="histoire__photo-col fade-in">
@@ -204,16 +203,6 @@
                 <span>Photo de profil</span>
               </div>
               <div class="histoire__photo-deco" aria-hidden="true"></div>
-            </div>
-            <div class="histoire__stats">
-              <div class="stat">
-                <span class="stat__number">5</span>
-                <span class="stat__label">Expériences & missions</span>
-              </div>
-              <div class="stat">
-                <span class="stat__number">3</span>
-                <span class="stat__label">Formations</span>
-              </div>
             </div>
           </div>
         </div>
@@ -228,192 +217,94 @@
           <h2 class="section__title">Compétences</h2>
         </div>
 
-        <div class="competences__grid">
+        <div class="skill-categories">
 
           <!-- Soft skills -->
-          <div class="competences__col fade-in">
-            <h3 class="competences__col-title">Qualités</h3>
-            <div class="skill-list">
-
-              <div class="skill">
-                <div class="skill__header">
-                  <span class="skill__name">Créativité</span>
-                  <span class="skill__pct">90%</span>
-                </div>
-                <p class="skill__desc">Conception de supports visuels originaux et de contenus engageants adaptés à chaque audience.</p>
-                <div class="skill__bar"><div class="skill__fill" data-width="90"></div></div>
+          <div class="skill-cat card fade-in">
+            <div class="skill-cat__header">
+              <div class="skill-cat__icon">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
+                  <circle cx="20" cy="16" r="5" stroke="var(--accent)" stroke-width="2"/>
+                  <path d="M11 32c0-4.418 4.03-8 9-8s9 3.582 9 8" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+                </svg>
               </div>
-
-              <div class="skill">
-                <div class="skill__header">
-                  <span class="skill__name">Autonomie</span>
-                  <span class="skill__pct">88%</span>
-                </div>
-                <p class="skill__desc">Capacité à mener des projets de bout en bout, de la conception à la réalisation, en toute indépendance.</p>
-                <div class="skill__bar"><div class="skill__fill" data-width="88"></div></div>
-              </div>
-
-              <div class="skill">
-                <div class="skill__header">
-                  <span class="skill__name">Empathie</span>
-                  <span class="skill__pct">85%</span>
-                </div>
-                <p class="skill__desc">Écoute active et compréhension des besoins pour mieux adapter les messages et les stratégies de communication.</p>
-                <div class="skill__bar"><div class="skill__fill" data-width="85"></div></div>
-              </div>
-
-              <div class="skill">
-                <div class="skill__header">
-                  <span class="skill__name">Adaptabilité</span>
-                  <span class="skill__pct">85%</span>
-                </div>
-                <p class="skill__desc">Aisance à évoluer dans des environnements variés, de l'agence de communication à la grande entreprise.</p>
-                <div class="skill__bar"><div class="skill__fill" data-width="85"></div></div>
-              </div>
-
+              <h3 class="skill-cat__title">Soft skills</h3>
+            </div>
+            <div class="skill-cat__tags">
+              <span class="badge" data-tooltip="Conception de supports visuels originaux et de contenus engageants">Créativité</span>
+              <span class="badge" data-tooltip="Capacité à mener des projets de bout en bout en toute indépendance">Autonomie</span>
+              <span class="badge" data-tooltip="Écoute active et compréhension des besoins pour adapter les messages">Empathie</span>
+              <span class="badge" data-tooltip="Aisance à évoluer dans des environnements variés">Adaptabilité</span>
+              <span class="badge" data-tooltip="Niveau courant à l'écrit et à l'oral">Anglais bilingue</span>
             </div>
           </div>
 
-          <!-- Hard skills -->
-          <div class="competences__col fade-in">
-            <h3 class="competences__col-title">Compétences</h3>
-            <div class="skill-list">
-
-              <div class="skill">
-                <div class="skill__header">
-                  <span class="skill__name">Réseaux sociaux</span>
-                  <span class="skill__pct">85%</span>
-                </div>
-                <p class="skill__desc">Gestion, animation et amélioration de comptes Instagram et Facebook, création de contenus vidéo.</p>
-                <div class="skill__bar"><div class="skill__fill" data-width="85"></div></div>
+          <!-- Communication & Marketing -->
+          <div class="skill-cat card fade-in">
+            <div class="skill-cat__header">
+              <div class="skill-cat__icon">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
+                  <path d="M12 14h16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-5l-4 4-4-4h-3a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>
+                </svg>
               </div>
+              <h3 class="skill-cat__title">Communication & Marketing</h3>
+            </div>
+            <div class="skill-cat__tags">
+              <span class="badge" data-tooltip="Rédaction de supports et animation de la communication d'entreprise">Communication interne</span>
+              <span class="badge" data-tooltip="Gestion de l'image de marque et des messages vers le public">Communication externe</span>
+              <span class="badge" data-tooltip="Gestion et animation de comptes Instagram et Facebook">Réseaux sociaux</span>
+              <span class="badge" data-tooltip="Stratégies en ligne, contenu digital et acquisition">Marketing digital</span>
+              <span class="badge" data-tooltip="Définition du positionnement et de l'identité de marque">Stratégie de marque</span>
+              <span class="badge" data-tooltip="Analyse concurrentielle et suivi des tendances du marché">Veille stratégique</span>
+            </div>
+          </div>
 
-              <div class="skill">
-                <div class="skill__header">
-                  <span class="skill__name">Stratégie de communication</span>
-                  <span class="skill__pct">80%</span>
-                </div>
-                <p class="skill__desc">Mise en place de plans de communication interne et externe, veille stratégique et concurrentielle.</p>
-                <div class="skill__bar"><div class="skill__fill" data-width="80"></div></div>
+          <!-- Création & Événementiel -->
+          <div class="skill-cat card fade-in">
+            <div class="skill-cat__header">
+              <div class="skill-cat__icon">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
+                  <circle cx="16" cy="16" r="3" stroke="var(--accent)" stroke-width="2"/>
+                  <path d="M11 29l6-7 4 5 3-3 5 5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="11" y="11" width="18" height="18" rx="2" stroke="var(--accent)" stroke-width="2"/>
+                </svg>
               </div>
+              <h3 class="skill-cat__title">Création & Événementiel</h3>
+            </div>
+            <div class="skill-cat__tags">
+              <span class="badge" data-tooltip="Conception de visuels print et digitaux">Supports visuels</span>
+              <span class="badge" data-tooltip="Production de contenus vidéo, texte et graphique">Création de contenu</span>
+              <span class="badge" data-tooltip="Promotion et valorisation d'un territoire ou d'une collectivité">Marketing territorial</span>
+              <span class="badge" data-tooltip="Préparation et animation d'événements, coordination des intervenants">Événementiel</span>
+            </div>
+          </div>
 
-              <div class="skill">
-                <div class="skill__header">
-                  <span class="skill__name">Création de supports visuels</span>
-                  <span class="skill__pct">80%</span>
-                </div>
-                <p class="skill__desc">Conception de visuels print et digitaux à l'aide d'Adobe, Canva et Figma.</p>
-                <div class="skill__bar"><div class="skill__fill" data-width="80"></div></div>
+          <!-- Logiciels -->
+          <div class="skill-cat card fade-in">
+            <div class="skill-cat__header">
+              <div class="skill-cat__icon">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
+                  <rect x="10" y="12" width="20" height="13" rx="2" stroke="var(--accent)" stroke-width="2"/>
+                  <path d="M15 29h10M20 25v4" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+                </svg>
               </div>
-
-              <div class="skill">
-                <div class="skill__header">
-                  <span class="skill__name">Organisation événementielle</span>
-                  <span class="skill__pct">75%</span>
-                </div>
-                <p class="skill__desc">Préparation et animation d'événements, coordination des partenaires et intervenants.</p>
-                <div class="skill__bar"><div class="skill__fill" data-width="75"></div></div>
-              </div>
-
+              <h3 class="skill-cat__title">Logiciels</h3>
+            </div>
+            <div class="skill-cat__tags">
+              <span class="badge" data-tooltip="Photoshop, Illustrator, Premiere Pro">Suite Adobe</span>
+              <span class="badge" data-tooltip="Word, Excel, PowerPoint">Pack Office</span>
+              <span class="badge" data-tooltip="Design graphique et visuels rapides">Canva</span>
+              <span class="badge" data-tooltip="UI design et prototypage">Figma</span>
+              <span class="badge" data-tooltip="Gestion et planification de projets">Gantt Project</span>
             </div>
           </div>
 
         </div>
 
-        <!-- Badges compétences -->
-        <div class="badges fade-in">
-          <span class="badge">Communication interne</span>
-          <span class="badge">Communication externe</span>
-          <span class="badge">Réseaux sociaux</span>
-          <span class="badge">Création de contenu</span>
-          <span class="badge">Supports visuels</span>
-          <span class="badge">Événementiel</span>
-          <span class="badge">Veille stratégique</span>
-          <span class="badge">Stratégie de marque</span>
-          <span class="badge">Marketing digital</span>
-          <span class="badge">Anglais bilingue</span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===== SECTION 4 : OUTILS & LOGICIELS ===== -->
-    <section class="section section--alt" id="outils">
-      <div class="container">
-        <div class="section__header fade-in">
-          <span class="section__label">04</span>
-          <h2 class="section__title">Outils & logiciels</h2>
-        </div>
-
-        <div class="outils__grid">
-
-          <div class="outil-card card fade-in">
-            <div class="outil-card__icon">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
-                <path d="M14 28L20 12L26 28M16.5 22H23.5" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
-                <path d="M12 14H28" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" opacity=".5"/>
-              </svg>
-            </div>
-            <h4 class="outil-card__name">Suite Adobe</h4>
-            <p class="outil-card__desc">Photoshop · Illustrator · Premiere</p>
-          </div>
-
-          <div class="outil-card card fade-in">
-            <div class="outil-card__icon">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
-                <rect x="12" y="12" width="7" height="7" rx="1" stroke="var(--accent)" stroke-width="2"/>
-                <rect x="21" y="12" width="7" height="7" rx="1" stroke="var(--accent)" stroke-width="2"/>
-                <rect x="12" y="21" width="7" height="7" rx="1" stroke="var(--accent)" stroke-width="2"/>
-                <rect x="21" y="21" width="7" height="7" rx="1" stroke="var(--accent)" stroke-width="2"/>
-              </svg>
-            </div>
-            <h4 class="outil-card__name">Pack Office</h4>
-            <p class="outil-card__desc">Word · Excel · PowerPoint</p>
-          </div>
-
-          <div class="outil-card card fade-in">
-            <div class="outil-card__icon">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
-                <circle cx="20" cy="20" r="7" stroke="var(--accent)" stroke-width="2"/>
-                <path d="M20 15V20L24 23" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
-                <path d="M13 13L27 27" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round" opacity=".4"/>
-              </svg>
-            </div>
-            <h4 class="outil-card__name">Canva</h4>
-            <p class="outil-card__desc">Design graphique & visuels</p>
-          </div>
-
-          <div class="outil-card card fade-in">
-            <div class="outil-card__icon">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
-                <path d="M20 12L20 20M20 20L14 14M20 20L26 14" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="20" cy="25" r="3" stroke="var(--accent)" stroke-width="2"/>
-                <circle cx="14" cy="14" r="2" stroke="var(--accent)" stroke-width="1.5"/>
-                <circle cx="26" cy="14" r="2" stroke="var(--accent)" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <h4 class="outil-card__name">Figma</h4>
-            <p class="outil-card__desc">UI design & prototypage</p>
-          </div>
-
-          <div class="outil-card card fade-in">
-            <div class="outil-card__icon">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect width="40" height="40" rx="10" fill="var(--accent)" opacity=".12"/>
-                <rect x="12" y="14" width="16" height="3" rx="1" stroke="var(--accent)" stroke-width="1.5"/>
-                <rect x="12" y="20" width="10" height="3" rx="1" stroke="var(--accent)" stroke-width="1.5"/>
-                <rect x="12" y="26" width="13" height="3" rx="1" stroke="var(--accent)" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <h4 class="outil-card__name">Gantt Project</h4>
-            <p class="outil-card__desc">Gestion & planification de projets</p>
-          </div>
-
-        </div>
       </div>
     </section>
 
@@ -528,6 +419,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

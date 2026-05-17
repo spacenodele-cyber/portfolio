@@ -138,15 +138,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
    7. MICRO-INTERACTIONS — card tilt on hover (desktop only)
    --------------------------------------------------------- */
 if (window.matchMedia('(pointer: fine)').matches) {
-  document.querySelectorAll('.card').forEach(card => {
+  document.querySelectorAll('.card:not(.skill-cat)').forEach(card => {
     card.addEventListener('mousemove', e => {
-      const rect   = card.getBoundingClientRect();
-      const x      = e.clientX - rect.left;
-      const y      = e.clientY - rect.top;
-      const cx     = rect.width / 2;
-      const cy     = rect.height / 2;
-      const rotX   = ((y - cy) / cy) * -4;
-      const rotY   = ((x - cx) / cx) *  4;
+      const rect = card.getBoundingClientRect();
+      const x    = e.clientX - rect.left;
+      const y    = e.clientY - rect.top;
+      const cx   = rect.width / 2;
+      const cy   = rect.height / 2;
+      const rotX = ((y - cy) / cy) * -4;
+      const rotY = ((x - cx) / cx) *  4;
 
       card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-4px)`;
     });

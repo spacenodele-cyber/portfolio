@@ -4,7 +4,7 @@
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baki the Grappler — Jules Simeray</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="passion.css" />
 </head>
 <body>
@@ -20,13 +20,22 @@
           <div class="manga-detail__body">
             <h1 class="manga-detail__title">Baki the Grappler</h1>
             <p class="manga-detail__meta">Keisuke Itagaki · 1991 · Weekly Shōnen Champion</p>
-            <p class="manga-detail__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br /><br />Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br /><br />Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            <div class="manga-detail__zones">
+              <div class="film__zone">
+                <span class="film__zone-label">Synopsis</span>
+                <p class="manga-detail__desc">Baki Hanma s'entraîne sans relâche pour devenir le combattant le plus puissant du monde et surpasser son père, Yujiro Hanma, considéré comme la créature la plus forte de la planète. Sa quête l'amène à affronter des combattants aux styles et aux physiques hors du commun.</p>
+              </div>
+              <div class="film__zone">
+                <span class="film__zone-label">Mon avis</span>
+                <p class="manga-detail__desc">Ce que j'aime, c'est les combats — plutôt pratique pour un manga de baston. L'œuvre arrive à transformer chaque affrontement en retournement de situation, jamais prévisible mais toujours stupidement cool.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
   <footer class="footer"><div class="container footer__inner"><p class="footer__name">Jules Simeray</p><p class="footer__copy">&copy; 2026 Jules Simeray — Tous droits réservés</p></div></footer>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

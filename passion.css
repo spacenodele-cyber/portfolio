@@ -239,6 +239,39 @@
   max-width: 520px;
 }
 
+.film__zones {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.film__zone {
+  padding: 1rem 1.25rem;
+  border-left: 2px solid var(--accent);
+  background: rgba(200, 169, 110, 0.04);
+  border-radius: 0 8px 8px 0;
+}
+
+.film__zone-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.film__zone .film__desc {
+  margin: 0;
+}
+
+.manga-detail__zones {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
 /* --- Responsive --- */
 @media (max-width: 860px) {
   .film,
@@ -771,6 +804,32 @@
 }
 @media (max-width: 540px) {
   .peinture-gallery { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .passion-hero {
+    min-height: 45vh;
+  }
+
+  .passion-hero__inner {
+    padding-block: 2rem;
+  }
+
+  .manga-section {
+    padding-block: 2.5rem 3rem;
+  }
+
+  .manga-detail {
+    padding-block: 2rem;
+  }
+
+  .films-section {
+    padding-block: 3rem;
+  }
+
+  .film {
+    padding-block: 2.5rem;
+  }
 }
 
 /* ---------------------------------------------------------

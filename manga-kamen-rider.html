@@ -4,7 +4,7 @@
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kamen Rider — Jules Simeray</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" /><noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" /></noscript>
   <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="passion.css" />
 </head>
 <body>
@@ -20,13 +20,22 @@
           <div class="manga-detail__body">
             <h1 class="manga-detail__title">Kamen Rider</h1>
             <p class="manga-detail__meta">Shotaro Ishinomori · 1971 · Série / Manga · Toei Company</p>
-            <p class="manga-detail__desc">Shin Kamen Rider est un film de tokusatsu sorti en 2023, réalisé par Hideaki Anno — le créateur de Neon Genesis Evangelion. Véritable déclaration d'amour à la série originale de 1971 imaginée par Shotaro Ishinomori, il reprend l'essence du héros masqué Takeshi Hongo : un homme transformé malgré lui en cyborg par l'organisation criminelle Shocker, contraint de retourner ses pouvoirs contre ses propres créateurs.<br /><br />Là où la série d'origine posait les fondations d'un genre — le héros solitaire, mi-homme mi-insecte, combattant le mal à moto et à coups de pied volants — Anno y insuffle une noirceur contemporaine et un rythme effréné, fidèle à la violence brute du matériau source. Chaque combat est brutal, chaque sacrifice pèse, et derrière le masque se cache un homme brisé qui n'a pas choisi son destin.<br /><br />Plus qu'une simple adaptation, Shin Kamen Rider est une méditation sur le sacrifice, l'identité et la résistance — les thèmes fondateurs d'une franchise qui, depuis plus de cinquante ans, a engendré des dizaines de séries, des millions de fans et une influence profonde sur toute la culture populaire japonaise.</p>
+            <div class="manga-detail__zones">
+              <div class="film__zone">
+                <span class="film__zone-label">Synopsis</span>
+                <p class="manga-detail__desc">Takeshi Hongo, un jeune motocycliste, est kidnappé par l'organisation criminelle Shocker et transformé en cyborg. Avant la fin de l'opération, il s'échappe et retourne ses pouvoirs contre ses créateurs sous l'identité de Kamen Rider — héros solitaire, mi-homme mi-insecte, symbole d'une franchise qui a marqué la culture populaire japonaise depuis plus de cinquante ans.</p>
+              </div>
+              <div class="film__zone">
+                <span class="film__zone-label">Mon avis</span>
+                <p class="manga-detail__desc">Ce que j'aime dans Kamen Rider, c'est surtout les designs. J'aime la capacité de la série à incarner des concepts en personnages. De plus, le rythme et le côté très nanardesque constituent un ajout assez agréable.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
   <footer class="footer"><div class="container footer__inner"><p class="footer__name">Jules Simeray</p><p class="footer__copy">&copy; 2026 Jules Simeray — Tous droits réservés</p></div></footer>
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
