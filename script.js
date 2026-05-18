@@ -24,19 +24,34 @@ const burger  = document.getElementById('nav-burger');
 const navMenu = document.getElementById('nav-menu');
 
 if (burger && navMenu) {
-  /* Backdrop injecté dans le body (hors du header) */
+  /* Backdrop injecté dans le body */
   const backdrop = document.createElement('div');
   backdrop.className = 'nav__backdrop';
   document.body.appendChild(backdrop);
+
+  /* Référence de la position d'origine du menu dans le nav */
+  const navParent  = navMenu.parentElement;
+  const navAnchor  = navMenu.nextSibling; // le bouton burger
 
   function closeMenu() {
     navMenu.classList.remove('open');
     backdrop.classList.remove('open');
     burger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    /* Remettre le menu dans le nav après la transition */
+    navMenu.addEventListener('transitionend', function restore() {
+      navMenu.removeEventListener('transitionend', restore);
+      if (!navMenu.classList.contains('open')) {
+        navParent.insertBefore(navMenu, navAnchor);
+      }
+    }, { once: true });
   }
 
   function openMenu() {
+    /* Déplacer le menu dans le body → sort du stacking context du header */
+    document.body.appendChild(navMenu);
+    /* Forcer un reflow pour que la transition de départ soit prise en compte */
+    navMenu.getBoundingClientRect();
     navMenu.classList.add('open');
     backdrop.classList.add('open');
     burger.setAttribute('aria-expanded', 'true');
