@@ -23,40 +23,43 @@ handleHeaderScroll();
 const burger  = document.getElementById('nav-burger');
 const navMenu = document.getElementById('nav-menu');
 
-/* Backdrop dynamique pour le panneau latéral */
-const backdrop = document.createElement('div');
-backdrop.className = 'nav__backdrop';
-document.body.appendChild(backdrop);
+if (burger && navMenu) {
+  /* Backdrop injecté dans le body (hors du header) */
+  const backdrop = document.createElement('div');
+  backdrop.className = 'nav__backdrop';
+  document.body.appendChild(backdrop);
 
-function closeMenu() {
-  navMenu.classList.remove('open');
-  backdrop.classList.remove('open');
-  burger.setAttribute('aria-expanded', 'false');
-  document.body.style.overflow = '';
-}
-
-burger.addEventListener('click', () => {
-  const isOpen = navMenu.classList.toggle('open');
-  backdrop.classList.toggle('open', isOpen);
-  burger.setAttribute('aria-expanded', String(isOpen));
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-});
-
-/* Clic sur le backdrop → ferme le panneau */
-backdrop.addEventListener('click', closeMenu);
-
-/* Close menu when a link is clicked */
-navMenu.querySelectorAll('.nav__link').forEach(link => {
-  link.addEventListener('click', closeMenu);
-});
-
-/* Close on Escape key */
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && navMenu.classList.contains('open')) {
-    closeMenu();
-    burger.focus();
+  function closeMenu() {
+    navMenu.classList.remove('open');
+    backdrop.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
   }
-});
+
+  function openMenu() {
+    navMenu.classList.add('open');
+    backdrop.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+
+  burger.addEventListener('click', () => {
+    navMenu.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  backdrop.addEventListener('click', closeMenu);
+
+  navMenu.querySelectorAll('.nav__link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+      closeMenu();
+      burger.focus();
+    }
+  });
+}
 
 /* ---------------------------------------------------------
    3. ACTIVE NAV LINK — IntersectionObserver on sections
