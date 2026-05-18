@@ -816,6 +816,17 @@ ul { list-style: none; }
   color: var(--text-muted);
 }
 
+.histoire__photo-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: var(--radius-lg);
+  position: relative;
+  z-index: 1;
+}
+
 /* Decorative border shifted behind */
 .histoire__photo-deco {
   position: absolute;
