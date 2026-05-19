@@ -1716,3 +1716,36 @@ ul { list-style: none; }
   background-clip: unset;
   text-shadow: 2px 2px 0 #003311;
 }
+
+/* ---- Tous les textes en pixel / VT323 (éléments non encore couverts) ---- */
+[data-theme="vaporwave"] p,
+[data-theme="vaporwave"] li,
+[data-theme="vaporwave"] h1,
+[data-theme="vaporwave"] h2,
+[data-theme="vaporwave"] h3,
+[data-theme="vaporwave"] h4 {
+  font-family: var(--font-vt);
+}
+
+[data-theme="vaporwave"] .hero__eyebrow,
+[data-theme="vaporwave"] .hero__sub { font-family: var(--font-pixel); font-size: 0.5rem; line-height: 2; }
+
+[data-theme="vaporwave"] .passion-card p { font-family: var(--font-vt); font-size: 1rem; }
+
+[data-theme="vaporwave"] .passion-hero__label { font-family: var(--font-pixel); font-size: 0.45rem; letter-spacing: 0.2em; }
+[data-theme="vaporwave"] .passion-hero__sub   { font-family: var(--font-vt);    font-size: 1.15rem; }
+[data-theme="vaporwave"] .passion-hero__back  { font-family: var(--font-pixel); font-size: 0.45rem; }
+
+[data-theme="vaporwave"] .film__title { font-family: var(--font-vt); font-size: 1.5rem; }
+[data-theme="vaporwave"] .film__meta  { font-family: var(--font-pixel); font-size: 0.42rem; }
+[data-theme="vaporwave"] .film__desc  { font-family: var(--font-vt);    font-size: 1.05rem; }
+
+[data-theme="vaporwave"] .manga-title { font-family: var(--font-vt); font-size: 1rem; }
+[data-theme="vaporwave"] .manga-year  { font-family: var(--font-pixel); font-size: 0.38rem; }
+
+[data-theme="vaporwave"] .outils__item__name { font-family: var(--font-pixel); font-size: 0.42rem; }
+
+[data-theme="vaporwave"] .skill-cat__name { font-family: var(--font-pixel); font-size: 0.45rem; }
+[data-theme="vaporwave"] .skill__name     { font-family: var(--font-vt);    font-size: 1rem; }
+
+[data-theme="vaporwave"] .histoire__text p { font-family: var(--font-vt); font-size: 1.1rem; }

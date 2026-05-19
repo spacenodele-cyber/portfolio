@@ -26,13 +26,13 @@
         <li class="nav__theme-item">
           <button class="theme-toggle" id="theme-toggle" aria-label="Choisir un thème" aria-expanded="false">
             <span class="theme-toggle__dot" style="background:#c8a96e"></span>
-            <span class="theme-toggle__dot" style="background:#4d9de0"></span>
             <span class="theme-toggle__dot" style="background:#d4547b"></span>
+            <span class="theme-toggle__dot" style="background:#22c55e"></span>
           </button>
           <div class="theme-dropdown" id="theme-dropdown">
             <button class="theme-swatch" data-theme="gold"  style="background:#c8a96e" aria-label="Or"></button>
-            <button class="theme-swatch" data-theme="blue"  style="background:#4d9de0" aria-label="Bleu"></button>
             <button class="theme-swatch" data-theme="rose"  style="background:#d4547b" aria-label="Rose"></button>
+            <button class="theme-swatch" data-theme="blue"  style="background:#22c55e" aria-label="Vert"></button>
           </div>
         </li>
       </ul>
@@ -312,46 +312,23 @@
 
         <div class="passions__grid">
 
-          <a href="passion-cinema.html" class="passion-card card fade-in passion-card--link">
+          <!-- 1 — Réalisation de figurines · imprimante 3D -->
+          <a href="passion-figurines.html" class="passion-card card fade-in passion-card--link">
             <div class="passion-card__visual passion-card__visual--1">
               <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <circle cx="30" cy="30" r="30" fill="white" opacity=".15"/>
-                <rect x="16" y="20" width="28" height="20" rx="2" stroke="white" stroke-width="2"/>
-                <path d="M22 20V18M38 20V18" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="30" cy="30" r="5" stroke="white" stroke-width="2"/>
-                <path d="M27 30L29 32L33 28" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div class="passion-card__body">
-              <h3 class="passion-card__title">Cinéma de genre</h3>
-              <p>Grand fan du cinéma fantastique, de science-fiction et d'horreur des années 80-90. Une époque dorée pour les effets spéciaux pratiques et les histoires imaginatives.</p>
-              <span class="passion-card__cta">Découvrir →</span>
-            </div>
-          </a>
-
-          <a href="passion-japon.html" class="passion-card card fade-in passion-card--link">
-            <div class="passion-card__visual passion-card__visual--2">
-              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="30" cy="30" r="30" fill="white" opacity=".15"/>
-                <path d="M20 38C20 38 22 30 30 22C38 30 40 38 40 38" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                <path d="M26 34C26 34 27 29 30 26C33 29 34 34 34 34" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-                <circle cx="30" cy="20" r="2" stroke="white" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <div class="passion-card__body">
-              <h3 class="passion-card__title">Culture japonaise</h3>
-              <p>Passionné par la culture japonaise dans toutes ses formes : art, cinéma, musique et traditions. Un univers créatif qui influence ma sensibilité esthétique au quotidien.</p>
-              <span class="passion-card__cta">Découvrir →</span>
-            </div>
-          </a>
-
-          <a href="passion-figurines.html" class="passion-card card fade-in passion-card--link">
-            <div class="passion-card__visual passion-card__visual--3">
-              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="30" cy="30" r="30" fill="white" opacity=".15"/>
-                <path d="M22 38C24 34 26 32 30 30C34 32 36 34 38 38" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                <path d="M30 30C30 30 26 26 26 22C26 19.791 27.791 18 30 18C32.209 18 34 19.791 34 22C34 26 30 30 30 30Z" stroke="white" stroke-width="2"/>
-                <path d="M20 38H40" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity=".6"/>
+                <!-- Châssis de l'imprimante -->
+                <rect x="12" y="15" width="36" height="32" rx="2" stroke="white" stroke-width="2"/>
+                <!-- Plateau d'impression -->
+                <rect x="16" y="35" width="28" height="5" rx="1" stroke="white" stroke-width="1.5"/>
+                <!-- Rail horizontal -->
+                <line x1="14" y1="24" x2="46" y2="24" stroke="white" stroke-width="1.5"/>
+                <!-- Tête d'extrusion -->
+                <rect x="24" y="19" width="12" height="8" rx="1" stroke="white" stroke-width="1.5"/>
+                <!-- Buse -->
+                <line x1="30" y1="27" x2="30" y2="32" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <!-- Objet en cours d'impression -->
+                <rect x="25" y="29" width="10" height="6" rx="1" stroke="white" stroke-width="1.5" opacity=".6"/>
               </svg>
             </div>
             <div class="passion-card__body">
@@ -361,6 +338,56 @@
             </div>
           </a>
 
+          <!-- 2 — Cinéma de genre · caméra / clap -->
+          <a href="passion-cinema.html" class="passion-card card fade-in passion-card--link">
+            <div class="passion-card__visual passion-card__visual--2">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="30" cy="30" r="30" fill="white" opacity=".15"/>
+                <!-- Corps du clap -->
+                <rect x="14" y="26" width="32" height="20" rx="2" stroke="white" stroke-width="2"/>
+                <!-- Bande supérieure du clap -->
+                <rect x="14" y="18" width="32" height="9" rx="1" stroke="white" stroke-width="2"/>
+                <!-- Rayures diagonales du clap -->
+                <path d="M20 18L16 27M28 18L24 27M36 18L32 27M44 18L40 27" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <!-- Triangle lecture dans le corps -->
+                <path d="M26 32L37 37L26 42Z" fill="white" opacity=".65"/>
+              </svg>
+            </div>
+            <div class="passion-card__body">
+              <h3 class="passion-card__title">Cinéma de genre</h3>
+              <p>Grand fan du cinéma fantastique, de science-fiction et d'horreur des années 80-90. Une époque dorée pour les effets spéciaux pratiques et les histoires imaginatives.</p>
+              <span class="passion-card__cta">Découvrir →</span>
+            </div>
+          </a>
+
+          <!-- 3 — Culture japonaise · pagode / temple -->
+          <a href="passion-japon.html" class="passion-card card fade-in passion-card--link">
+            <div class="passion-card__visual passion-card__visual--3">
+              <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="30" cy="30" r="30" fill="white" opacity=".15"/>
+                <!-- Flèche / Finial -->
+                <line x1="30" y1="8" x2="30" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                <!-- Toit 1 (haut) -->
+                <path d="M30 14L22 20H38Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <rect x="27" y="20" width="6" height="4" stroke="white" stroke-width="1.5"/>
+                <!-- Toit 2 (milieu) -->
+                <path d="M30 24L18 31H42Z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
+                <rect x="24" y="31" width="12" height="4" stroke="white" stroke-width="1.5"/>
+                <!-- Toit 3 (bas) -->
+                <path d="M30 35L14 43H46Z" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                <!-- Base -->
+                <rect x="23" y="43" width="14" height="6" stroke="white" stroke-width="2"/>
+                <line x1="17" y1="49" x2="43" y2="49" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="passion-card__body">
+              <h3 class="passion-card__title">Culture japonaise</h3>
+              <p>Passionné par la culture japonaise dans toutes ses formes : art, cinéma, musique et traditions. Un univers créatif qui influence ma sensibilité esthétique au quotidien.</p>
+              <span class="passion-card__cta">Découvrir →</span>
+            </div>
+          </a>
+
+          <!-- 4 — Jeux vidéo (inchangé) -->
           <a href="passion-jeux.html" class="passion-card card fade-in passion-card--link">
             <div class="passion-card__visual passion-card__visual--4">
               <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

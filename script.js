@@ -185,28 +185,6 @@ if (window.matchMedia('(pointer: fine)').matches) {
   });
 }
 
-/* ---------------------------------------------------------
-   8. PASSION CARDS — subtle parallax on visual block
-   --------------------------------------------------------- */
-if (window.matchMedia('(pointer: fine) and (prefers-reduced-motion: no-preference)').matches) {
-  const passionCards = document.querySelectorAll('.passion-card');
-
-  passionCards.forEach(card => {
-    const visual = card.querySelector('.passion-card__visual');
-    if (!visual) return;
-
-    card.addEventListener('mousemove', e => {
-      const rect = card.getBoundingClientRect();
-      const x    = (e.clientX - rect.left) / rect.width  - 0.5;
-      const y    = (e.clientY - rect.top)  / rect.height - 0.5;
-      visual.style.transform = `translate(${x * 8}px, ${y * 8}px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      visual.style.transform = '';
-    });
-  });
-}
 
 /* ---------------------------------------------------------
    9. PROCESS PHOTOS — carousel scroll + compteur
@@ -614,10 +592,16 @@ function initVaporwaveEffects() {
   const sel = [
     '.section__label', '.section__title',
     '.timeline__role', '.timeline__company', '.timeline__date',
-    '.passion-card__title', '.passion-card__cta',
+    '.passion-card__title', '.passion-card__cta', '.passion-card p',
     '.exp-block__label', '.exp-hero__company', '.exp-hero__date',
     '.footer__name', '.footer__copy',
     '.outils__item__name', '.nav__link',
+    '.hero__eyebrow', '.hero__sub',
+    '.passion-hero__label', '.passion-hero__sub', '.passion-hero__back',
+    '.film__title', '.film__meta', '.film__desc',
+    '.manga-title', '.manga-year',
+    '.histoire__lead', '.histoire__text p',
+    '.skill-cat__name', '.skill__name',
   ].join(',');
 
   _scrambleObs = new IntersectionObserver(entries => {
