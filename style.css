@@ -851,40 +851,6 @@ ul { list-style: none; }
   z-index: 0;
 }
 
-.histoire__stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-top: 1.5rem;
-}
-
-.stat {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 1.25rem;
-  text-align: center;
-  transition: border-color var(--transition);
-}
-
-.stat:hover { border-color: rgba(200,169,110,0.3); }
-
-.stat__number {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--accent);
-  line-height: 1.1;
-}
-
-.stat__label {
-  display: block;
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  margin-top: 0.25rem;
-}
-
 /* ---------------------------------------------------------
    9. COMPÉTENCES
    --------------------------------------------------------- */
@@ -924,55 +890,6 @@ ul { list-style: none; }
   transform: none;
   box-shadow: none;
   border-color: var(--border);
-}
-
-.skill__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 0.25rem;
-}
-
-.skill__name {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--white);
-}
-
-.skill__pct {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--accent);
-}
-
-.skill__desc {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 0.6rem;
-}
-
-.skill__bar {
-  height: 4px;
-  background: var(--border);
-  border-radius: 100px;
-  overflow: hidden;
-}
-
-.skill__fill {
-  height: 100%;
-  width: 0;
-  background: linear-gradient(90deg, var(--accent-2), var(--accent));
-  border-radius: 100px;
-  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Badges */
-.badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
 }
 
 .badge {
@@ -1027,41 +944,7 @@ ul { list-style: none; }
 }
 
 /* ---------------------------------------------------------
-   10. OUTILS & LOGICIELS
-   --------------------------------------------------------- */
-.outils__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1.25rem;
-}
-
-.outil-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.75rem;
-  padding: 1.75rem 1.25rem;
-}
-
-.outil-card__icon svg {
-  width: 44px;
-  height: 44px;
-}
-
-.outil-card__name {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: var(--white);
-}
-
-.outil-card__desc {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-/* ---------------------------------------------------------
-   11. PASSIONS
+   10. PASSIONS
    --------------------------------------------------------- */
 .passions__grid {
   display: grid;
@@ -1745,7 +1628,6 @@ ul { list-style: none; }
 
 [data-theme="vaporwave"] .outils__item__name { font-family: var(--font-pixel); font-size: 0.42rem; }
 
-[data-theme="vaporwave"] .skill-cat__name { font-family: var(--font-pixel); font-size: 0.45rem; }
-[data-theme="vaporwave"] .skill__name     { font-family: var(--font-vt);    font-size: 1rem; }
+[data-theme="vaporwave"] .skill-cat__title { font-family: var(--font-pixel); font-size: 0.45rem; }
 
 [data-theme="vaporwave"] .histoire__text p { font-family: var(--font-vt); font-size: 1.1rem; }

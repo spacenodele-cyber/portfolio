@@ -125,27 +125,7 @@ const fadeObserver = new IntersectionObserver(entries => {
 fadeEls.forEach(el => fadeObserver.observe(el));
 
 /* ---------------------------------------------------------
-   5. SKILL BARS — animate when visible
-   --------------------------------------------------------- */
-const skillFills = document.querySelectorAll('.skill__fill');
-
-const barObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const fill  = entry.target;
-    const width = fill.dataset.width || 0;
-    /* Slight delay to let fade-in play first */
-    setTimeout(() => {
-      fill.style.width = `${width}%`;
-    }, 200);
-    barObserver.unobserve(fill);
-  });
-}, { threshold: 0.5 });
-
-skillFills.forEach(fill => barObserver.observe(fill));
-
-/* ---------------------------------------------------------
-   6. SMOOTH SCROLL — with offset for fixed header
+   5. SMOOTH SCROLL — with offset for fixed header
    --------------------------------------------------------- */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', e => {
